@@ -2,7 +2,7 @@
 
 This guide is written for [EndeavourOS](https://endeavouros.com/) but can be easily adapted for any Arch based system, and less easily for any other Linux based system. The concepts are the same irrespective of distribution.
 
-Written from the perspective of a beginner to [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write) filesystems, this was originally intended as a personal reference but hopefully someone may find this updated version useful. Feel free to open an issue or PR for corrections.
+Written from the perspective of a beginner to [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write) filesystems, this was originally intended as a personal reference but hopefully someone may find this updated version useful. Feel free to [open](https://github.com/pavinjosdev/linux-system-recovery) an issue or PR for corrections.
 
 ---
 
