@@ -663,7 +663,7 @@ Edit `/etc/default/grub` with UUID of new swap partition (for hibernation resume
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Reboot server.
+Reboot system.
 
 ---
 
