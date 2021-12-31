@@ -630,32 +630,38 @@ mv @log @log.fresh
 mv @cache @cache.fresh
 ```
 
-Move and rename backup files:
+Move backup data into its subvolumes:
 
 ```
 mv /mnt/@.fresh/root/backup/* /mnt
-mv @.latest @
-mv @home.latest @home
-mv @log.latest @log
-mv @cache.latest @cache
+btrfs subvolume create @
+btrfs subvolume create @home
+btrfs subvolume create @log
+btrfs subvolume create @cache
+btrfs subvolume create @snapshots
+mv -T @.latest @
+mv -T @home.latest @home
+mv -T @log.latest @log
+mv -T @cache.latest @cache
 ```
 
 Copy `/boot` dir from `@.fresh` to `@`:
 
 ```
+mv /mnt/@/boot /mnt/@/boot.fresh
 cp -a /mnt/@.fresh/boot /mnt/@
 ```
 
 Edit `/mnt/@/etc/fstab` with UUID of new EFI, btrfs and swap partitions:
 
 ```
-lsblk
+lsblk -f
 blkid /dev/sda1
 blkid /dev/sda2
 blkid /dev/sda3
 ```
 
-Reboot back into OS.
+Reboot back into OS. Use LTS kernel in case of any issues during boot.
 
 Edit `/etc/default/grub` with UUID of new swap partition (for hibernation resume) and run:
 
@@ -664,6 +670,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 Reboot system.
+
+Optional: Delete unneeded btrfs subvolumes.
 
 ---
 
