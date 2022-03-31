@@ -1,4 +1,4 @@
-# Comprehensive Linux system recovery - from broken OS or hardware failure to a fully functional system.
+# EOS system recovery using btrfs and snapshots - from broken OS or hardware failure to a fully functional system.
 
 This guide is written for [EndeavourOS](https://endeavouros.com/) but can be easily adapted for any Arch based system, and less easily for any other Linux based system. The concepts are the same irrespective of distribution.
 
